@@ -1,0 +1,252 @@
+// fonts
+// @font-face
+//   font-family: "bingo"
+//   src: url('bingo.eot')
+//   src: local('bingo')
+//   src: url('bingo.svg#bingo') format('svg')
+//   src: url('bingo.otf') format('opentype')
+@font-face 
+  font-family: 'Lato'
+  font-style: normal
+  font-weight: 400
+  src: url ('/fonts/lato-v17-latin-regular.eot') /* IE9 Compat Modes */
+  src: local('Lato')
+  src: url ('/fonts/lato-v17-latin-regular.eot?#iefix') format('embedded-opentype') /* IE6-IE8 */
+  src: url ('/fonts/lato-v17-latin-regular.woff2') format('woff2') /* Super Modern Browsers */
+  src: url ('/fonts/lato-v17-latin-regular.woff') format('woff') /* Modern Browsers */
+  src: url ('/fonts/lato-v17-latin-regular.ttf') format('truetype') /* Safari, Android, iOS */
+  src: url ('/fonts/lato-v17-latin-regular.svg#Lato') format('svg') /* Legacy iOS */
+
+/* lato-700 - latin */
+@font-face 
+  font-family: 'Lato'
+  font-style: normal
+  font-weight: 700
+  src: url ('/fonts/lato-v17-latin-700.eot') /* IE9 Compat Modes */
+  src: local('Lato')
+  src: url ('/fonts/lato-v17-latin-700.eot?#iefix') format('embedded-opentype') /* IE6-IE8 */
+  src: url ('/fonts/lato-v17-latin-700.woff2') format('woff2') /* Super Modern Browsers */
+  src: url ('/fonts/lato-v17-latin-700.woff') format('woff') /* Modern Browsers */
+  src: url ('/fonts/lato-v17-latin-700.ttf') format('truetype') /* Safari, Android, iOS */
+  src: url ('/fonts/lato-v17-latin-700.svg#Lato') format('svg') /* Legacy iOS */
+
+  
+/* -------------------------------- reset css ------------------------------- */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
+	margin: 0
+	padding: 0
+	border: 0
+	font-size: 100%
+	font: inherit
+	vertical-align: baseline
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
+	display: block
+
+body
+	line-height: 1
+
+ol, ul 
+	list-style: none
+
+blockquote, q
+	quotes: none
+
+blockquote:before, blockquote:after, q:before, q:after
+	content: ''
+	content: none
+
+table
+	border-collapse: collapse
+	border-spacing: 0
+/* -------------------------------- reset css ------------------------------- */
+
+// variables
+$bg_body_clr: #F6F8FB
+$bg_notify_counter: #FF6760
+$primary: #336CFB
+$primary_light: #669FFF
+$gray_dark: #52575C
+$gray_light: #E8E8E8
+$shadow: 0px 12px 26px rgba(16, 30, 115, 0.06)
+
+body
+  background-color: $bg_body_clr
+  font-family: Lato, sans-serif
+
+// utils
+.section
+  max-width: 1110px !important
+  margin: 0 auto
+  padding: 0 10px
+
+
+// /utils
+
+.header
+  height: 88px
+  display: flex
+  justify-content: space-between
+
+.wraper
+  display: flex
+
+.logo__link
+  margin: 29px 32px 29px 0
+  margin-right: 32px
+  img
+    height: 30px
+    width: 142px
+
+.header__find
+  display: flex
+  width: 350px
+  height: 40px
+  border-radius: 100px
+  border: none
+  margin: 24px
+  background: #fff
+
+  .header__find_btn
+    margin: 13px 12px 13px 16px
+    padding: 0
+    width: 14px
+    height: 14px
+    border: none
+    background-color: #fff
+    background: url(../img/find.svg) no-repeat
+  
+  .header__find_field
+    height: 16px
+    margin-top: 12px
+    margin-right: 16px
+    width: 100%
+    border: none
+    font-size: 13px
+    line-height: 16px
+    input::-webkit-input-placeholder 
+      color: #A0A4A8;
+    input::-moz-placeholder 
+      color: #A0A4A8;
+    input:-ms-input-placeholder 
+      color: #A0A4A8;
+    input::-webkit-input-placeholder 
+      color: #A0A4A8;
+    input::placeholder 
+      color: #A0A4A8;
+
+.notify
+  width: 24px
+  height: 24px
+  margin: 32px 26px 32px 0
+  background: url(../img/notify.svg) no-repeat
+
+.notify__counter
+  position: relative
+  background-color: $bg_notify_counter
+  padding: 2px
+  width: 16px
+  height: 16px
+  border-radius: 100%
+  top: -6px
+  right: -18px
+  color: #fff
+  text-align: center
+  border: 2px solid $bg_body_clr
+
+.header_profile
+  width: 40px
+  height: 40px
+  background-color: $gray_light
+  border: 3px solid $gray_light
+  border-radius: 100%
+  margin: 24px 0 24px 16px
+
+.nav
+  margin-bottom: 40px
+  ul
+    display: flex
+    margin: 14px 0
+    .nav__link
+      text-decoration: none
+      color: $gray_dark
+      font-weight: 700
+      margin-right: 33px
+    .nav__link:hover
+      color: $primary_light
+    .nav__link_border
+      padding-right: 32px
+      border-right: 1px solid $gray_light
+    .current
+      color: $primary
+
+@media screen and (max-width: 958px)
+  overflow-x: scroll
+
+
+.info__counters
+  display: flex
+  // flex-wrap: wrap
+  justify-content: space-between
+.info_counter
+  display: flex
+  background-color: #fff
+  width: calc(25% - 24px)
+  // width: 255px
+  // padding-right: 24px
+  margin-right:not(:last-child) 30px 
+  border-radius: 8px
+  box-shadow: $shadow
+  margin-bottom: 30px 
+.counter__img
+  width: 40px
+  height: 40px
+  margin: 24px
+.counter__text
+  display: flex
+  flex-direction: column
+.counter__title
+  margin-top: 20px
+  margin-bottom: 4px
+  font-size: 14px
+  font-weight: 700
+  line-height: 20px
+.counter_number
+  font-size: 18px
+  line-height: 24px
+  color: $primary
+
+
+
+.chart
+  background-color: #fff
+  border-radius: 8px
+  box-shadow: $shadow
+
+.chart__desc
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  padding-top: 24px
+  padding-right: 24px
+  padding-bottom: 24px
+  .chart__title
+    font-weight: 700
+    font-size: 20px
+    line-height: 26px 
+    margin: 0 0 36px 24px
+  .years
+    margin-top: 4px
+    .colors
+      font-weight: 700
+      font-size: 12px
+      line-height: 16px
+      color: #A0A4A8
+      margin-right: 76px
+    .colors:last-child
+      margin-right: 0 
+.big__chart
+  padding-bottom: 24px
+  margin-bottom: 30px
+

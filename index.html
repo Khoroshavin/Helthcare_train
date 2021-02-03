@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header class="section header">
+    <div class="wraper">
+      <a class="logo__link" href="#">
+        <img src="img/logo.png" alt="logo icon" title="logo Healthcare">
+      </a>
+      <div class="header__find">
+        <button class="header__find_btn" title="button to find"></button>
+        <input class="header__find_field" type="text" placeholder="Search" />
+      </div>
+    </div>
+    <div class="wraper">
+      <div class="notify">
+        <div class="notify__counter">9</div>
+      </div>
+      <div class="header_profile">
+        <img src="#" alt="">
+      </div>
+    </div>
+
+  </header>
+
+  <nav class="section nav">
+    <ul>
+      <li><a class="nav__link current" href="#">Dashboard</a></li>
+      <li><a class="nav__link" href="#">Appointments</a></li>
+      <li><a class="nav__link" href="#">Doctors</a></li>
+      <li><a class="nav__link" href="#">Departments</a></li>
+      <li><a class="nav__link" href="#">Patients</a></li>
+      <li><a class="nav__link nav__link_border" href="#">Payments</a></li>
+      <li><a class="nav__link" href="#">Service pages</a></li>
+      <li><a class="nav__link" href="#">Help</a></li>
+    </ul>
+  </nav>
+
+  <section class="section info__counters">
+    <div class="info_counter">
+      <div class="counter__img">
+        <img src="img/appoinments.svg" alt="Appointments icon">
+      </div>
+      <div class="counter__text">
+        <span class="counter__title">Appointments</span>
+        <span class="counter_number">213</span>
+      </div>
+    </div>
+    <div class="info_counter">
+      <div class="counter__img">
+        <img src="img/pathients.svg" alt="Appointments icon">
+      </div>
+      <div class="counter__text">
+        <span class="counter__title">New Patients</span>
+        <span class="counter_number">104</span>
+      </div>
+    </div>
+    <div class="info_counter">
+      <div class="counter__img">
+        <img src="img/operations.svg" alt="Appointments icon">
+      </div>
+      <div class="counter__text">
+        <span class="counter__title">Operations</span>
+        <span class="counter_number">24</span>
+      </div>
+    </div>
+    <div class="info_counter">
+      <div class="counter__img">
+        <img src="img/hospital.svg" alt="hospital icon">
+      </div>
+      <div class="counter__text">
+        <span class="counter__title">Hospital Earnings</span>
+        <span class="counter_number">$ 12,174</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section chart big__chart">
+    <div class="chart__desc">
+      <span class="chart__title">Hospital Survey</span>
+      <div class="years">
+        <span class="yellow colors">Patients 2019</span>
+        <span class="blue colors">Patients 2020</span>
+      </div>
+    </div>
+    <canvas height="60" id="myChart"></canvas>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+  <script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['2020-1', '2020-2', '2020-3', '2020-4', '2020-5', '2020-6', '2020-7', '2020-8', '2020-9',
+          '2020-10', '2020-11', '2020-12'
+        ],
+        datasets: [{
+            data: [140, 120, 210, 150, 150, 130, 180, 170, 135, 220, 180, 250],
+            fill: true,
+            pointRadius: 3,
+            pointBackgroundColor: '#fff',
+            pointBorderColor: 'rgba(51, 108, 251, 1)',
+            backgroundColor: [
+              'rgba(51, 108, 251, 0.2) 0%, rgba(51, 108, 251, 0.02)',
+            ],
+            borderColor: [
+              'rgba(51, 108, 251, 1)',
+            ],
+            borderWidth: 2
+          },
+          {
+            backgroundColor: [
+              'transparent',
+            ],
+            data: [50, 80, 110, 100, 160, 110, 135, 140, 180, 100, 110, 180],
+            pointRadius: 3,
+            pointBackgroundColor: '#fff',
+            pointBorderColor: '#FAC032',
+            borderColor: [
+              '#FAC032',
+            ],
+            borderWidth: 2
+          }
+        ]
+      },
+      options: {
+
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        },
+        layout: {
+          padding: {
+            left: 24,
+            right: 24,
+          }
+        },
+        legend: {
+          display: false,
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
